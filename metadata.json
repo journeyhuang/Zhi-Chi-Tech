@@ -1,0 +1,7 @@
+{
+  "name": "ZhiChi Tech - Smart Companion",
+  "description": "Official website for ZhiChi Technology, featuring the Light & Shadow Affection Smart Emotional Companion Terminal.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
