@@ -6,22 +6,22 @@ const features = [
   {
     icon: <Box size={32} />,
     title: "3D全息成像",
-    description: "采用裸眼3D光场显示技术，将子女形象立体呈现，仿佛真人就在眼前，打破屏幕的隔阂感。"
+    description: "采用裸眼3D光场显示技术，将子女形象立体呈现，减少屏幕隔阂，增强在场感。"
   },
   {
     icon: <User size={32} />,
     title: "数字人复刻",
-    description: "只需少量照片和语音素材，AI深度学习即可生成高保真数字分身，还原子女的神态与声音。"
+    description: "少量照片与语音素材即可生成高保真数字分身，还原表情、语气与习惯用语。"
   },
   {
     icon: <Mic size={32} />,
     title: "自然语音交互",
-    description: "基于大语言模型，能理解老人的方言、唠叨，进行有温度的多轮对话，不仅仅是问答，更是谈心。"
+    description: "基于大语言模型理解方言与表达习惯，进行有温度的多轮对话，更像家人聊天。"
   },
   {
     icon: <HeartHandshake size={32} />,
     title: "情感计算引擎",
-    description: "实时分析老人情绪状态，主动发起关怀。检测到老人低落时，会自动讲笑话或播放子女的问候视频。"
+    description: "实时识别情绪变化并主动关怀，必要时联动子女端发起问候。"
   }
 ];
 
@@ -30,9 +30,9 @@ const ProductFeature: React.FC = () => {
     <section id={SectionId.PRODUCT} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">核心科技，为爱赋能</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 font-display">核心科技，为爱赋能</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            我们将前沿的AI与光学技术融入“光影亲情”终端，只为给老人最真实的陪伴体验。
+            我们将前沿的AI与光学技术融入“光影亲情”终端，用技术让陪伴变得真实、持续、可感知。
           </p>
         </div>
 
@@ -53,12 +53,12 @@ const ProductFeature: React.FC = () => {
         <div className="mt-20 bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">不仅仅是硬件，更是连接的纽带</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 font-display">不仅仅是硬件，更是连接的纽带</h3>
               <ul className="space-y-4">
                 {[
-                  "无需佩戴眼镜，一键启动，零学习成本",
-                  "子女端APP实时同步，随时介入视频通话",
-                  "健康数据监测，异常情况自动预警",
+                  "无需佩戴设备，一键启动，零学习成本",
+                  "子女端APP实时同步，必要时介入通话",
+                  "健康数据与情绪变化提醒，异常情况自动预警",
                   "家庭相册云端共享，随时回味温馨时刻"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center text-slate-300">

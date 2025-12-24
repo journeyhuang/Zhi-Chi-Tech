@@ -8,12 +8,12 @@ const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">关于咫尺科技</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6 font-display">关于咫尺科技</h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              我们是来自自动化专业的大学生创业团队。在《创新创业导论》课程中，我们关注到了老龄化社会日益严重的“空巢”问题。
+              我们是来自自动化专业的大学生创业团队。在《创新创业导论》课程中，我们关注到老龄化社会日益严重的“空巢”问题。
             </p>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              科技不应只是冰冷的算法和代码，更应是有温度的关怀。我们结合专业所学的自动化控制、计算机视觉与人工智能技术，创立了“咫尺科技”。我们的愿景是用科技缩短心与心的距离，让爱不再有距离。
+              科技不应只是冰冷的算法和代码，更应是有温度的关怀。我们结合自动化控制、计算机视觉与人工智能技术，创立了“咫尺科技”。我们的愿景是用科技缩短心与心的距离，让爱不再有距离。
             </p>
             
             <div className="space-y-6">

@@ -24,7 +24,8 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { id: SectionId.HOME, label: '首页' },
-    { id: SectionId.PRODUCT, label: '产品介绍' },
+    { id: SectionId.VALUE, label: '方案亮点' },
+    { id: SectionId.PRODUCT, label: '核心科技' },
     { id: SectionId.DEMO, label: '在线体验' },
     { id: SectionId.ABOUT, label: '关于我们' },
   ];
@@ -54,13 +55,13 @@ const Navbar: React.FC = () => {
                 {link.label}
               </button>
             ))}
-            <button 
-              onClick={() => scrollToSection(SectionId.CONTACT)}
-              className="bg-slate-900 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-600 transition-colors shadow-lg"
-            >
-              联系我们
-            </button>
-          </div>
+          <button 
+            onClick={() => scrollToSection(SectionId.CONTACT)}
+            className="bg-slate-900 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-600 transition-colors shadow-lg"
+          >
+            预约体验
+          </button>
+        </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -87,7 +88,7 @@ const Navbar: React.FC = () => {
             onClick={() => scrollToSection(SectionId.CONTACT)}
             className="bg-orange-500 text-white py-3 rounded-lg font-bold text-center w-full"
           >
-            联系我们
+            预约体验
           </button>
         </div>
       )}

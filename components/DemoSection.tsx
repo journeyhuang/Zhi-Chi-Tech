@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Mic, Sparkles, RefreshCcw } from 'lucide-react';
 import { SectionId, Message } from '../types';
-import { sendMessageToGemini, initializeChat } from '../services/geminiService';
+import { sendMessageToGemini, initializeChat, isGeminiConfigured } from '../services/geminiService';
 
 const DemoSection: React.FC = () => {
   const [input, setInput] = useState('');
@@ -9,7 +9,14 @@ const DemoSection: React.FC = () => {
     { role: 'model', text: '爷爷/奶奶，我是晨晨呀！今天身体怎么样？有没有按时吃饭呀？', timestamp: new Date() }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDemoMode] = useState(!isGeminiConfigured());
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const quickPrompts = [
+    '晨晨，我今天有点腰疼。',
+    '晨晨，我想你了。',
+    '今天下雨了，你那边冷吗？',
+    '给我讲个小故事吧。',
+  ];
 
   useEffect(() => {
     initializeChat();
@@ -62,6 +69,10 @@ const DemoSection: React.FC = () => {
     initializeChat();
   };
 
+  const handleQuickSend = (text: string) => {
+    setInput(text);
+  };
+
   return (
     <section id={SectionId.DEMO} className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,6 +88,9 @@ const DemoSection: React.FC = () => {
             <br className="hidden md:block"/>
             试着输入：“晨晨，我今天有点腰疼” 或 “晨晨，我想你了”。
           </p>
+          {isDemoMode && (
+            <p className="text-xs text-slate-500 mt-3">当前为演示模式（未配置 Gemini API Key）</p>
+          )}
         </div>
 
         {/* Demo Interface */}
@@ -152,6 +166,17 @@ const DemoSection: React.FC = () => {
 
             {/* Input Area */}
             <div className="p-4 border-t border-slate-100 bg-white">
+              <div className="flex flex-wrap gap-2 mb-3">
+                {quickPrompts.map((prompt, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleQuickSend(prompt)}
+                    className="text-xs px-3 py-1 rounded-full bg-slate-100 text-slate-600 hover:bg-orange-100 hover:text-orange-600 transition-colors"
+                  >
+                    {prompt}
+                  </button>
+                ))}
+              </div>
               <div className="relative flex items-center">
                 <textarea
                   value={input}

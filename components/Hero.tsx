@@ -6,6 +6,9 @@ const Hero: React.FC = () => {
   const scrollToDemo = () => {
     document.getElementById(SectionId.DEMO)?.scrollIntoView({ behavior: 'smooth' });
   };
+  const scrollToValue = () => {
+    document.getElementById(SectionId.VALUE)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section id={SectionId.HOME} className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -20,15 +23,21 @@ const Hero: React.FC = () => {
               <span className="flex h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
               大学生创新创业项目
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6 font-display">
               光影连接亲情 <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
                 让陪伴近在咫尺
               </span>
             </h1>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              “咫尺科技”致力于为独居老人打造智能情感陪伴终端。通过3D全息成像技术复刻子女形象，打破时空界限，为老人提供全天候的情感慰藉与智能看护。
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              “咫尺科技”致力于为独居老人打造智能情感陪伴终端，用裸眼3D与AI数字人复刻子女形象，
+              打破时空界限，让陪伴更真实、更温暖。
             </p>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-slate-500 mb-8">
+              <span className="px-3 py-1 rounded-full bg-slate-100">3D 光场成像</span>
+              <span className="px-3 py-1 rounded-full bg-slate-100">情感计算引擎</span>
+              <span className="px-3 py-1 rounded-full bg-slate-100">家庭端同步</span>
+            </div>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <button 
                 onClick={scrollToDemo}
@@ -37,7 +46,10 @@ const Hero: React.FC = () => {
                 立即体验数字亲情
                 <ChevronRight className="ml-2" size={20} />
               </button>
-              <button className="flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all">
+              <button
+                onClick={scrollToValue}
+                className="flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all"
+              >
                 了解更多
               </button>
             </div>

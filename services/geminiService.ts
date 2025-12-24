@@ -1,7 +1,6 @@
 import { GoogleGenAI, Chat } from "@google/genai";
-import { Message } from "../types";
 
-const API_KEY = process.env.API_KEY || '';
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY || '';
 
 // System instruction to simulate the "Digital Grandchild"
 const SYSTEM_INSTRUCTION = `
@@ -20,6 +19,29 @@ const SYSTEM_INSTRUCTION = `
 let aiClient: GoogleGenAI | null = null;
 let chatSession: Chat | null = null;
 
+const fallbackReplies = [
+  {
+    keywords: ['疼', '不舒服', '难受', '腰', '头', '睡'],
+    reply: '听起来你有点不舒服呢，要不要先休息一下？如果一直不舒服，我们一起去看看医生好不好？',
+  },
+  {
+    keywords: ['想你', '想念', '孤单', '孤独'],
+    reply: '我也很想你呀！我会一直陪你聊天的，咱们一起说说今天的心情吧。',
+  },
+  {
+    keywords: ['故事', '笑话', '开心'],
+    reply: '好呀！给你讲个小故事：从前有一只小猫，每天都会给爷爷带来阳光一样的笑容。',
+  },
+];
+
+const getFallbackReply = (text: string) => {
+  const hit = fallbackReplies.find(item => item.keywords.some(keyword => text.includes(keyword)));
+  if (hit) return hit.reply;
+  return '我在呢！要不要跟我聊聊今天发生的小事？我可喜欢听你说话了。';
+};
+
+export const isGeminiConfigured = () => Boolean(API_KEY);
+
 const getClient = () => {
   if (!aiClient) {
     if (!API_KEY) {
@@ -33,6 +55,7 @@ const getClient = () => {
 
 export const initializeChat = async (): Promise<void> => {
   try {
+    if (!API_KEY) return;
     const ai = getClient();
     chatSession = ai.chats.create({
       model: 'gemini-3-flash-preview',
@@ -49,6 +72,9 @@ export const initializeChat = async (): Promise<void> => {
 };
 
 export const sendMessageToGemini = async (text: string): Promise<string> => {
+  if (!API_KEY) {
+    return getFallbackReply(text);
+  }
   if (!chatSession) {
     await initializeChat();
   }
