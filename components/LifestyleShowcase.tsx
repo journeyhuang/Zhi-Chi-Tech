@@ -1,30 +1,32 @@
-﻿import React from 'react';
+import React from 'react';
 import { SectionId } from '../types';
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const images = [
   {
     title: 'Spirit Cabin on RGB desk setup',
     description: 'A wide shot of the Spirit Cabin on a dimly lit desk with RGB ambient lighting.',
     className: 'md:col-span-2 md:row-span-2',
-    url: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80',
+    url: `${baseUrl}images/galley-hero.jpg`,
   },
   {
     title: 'NFC tap interaction',
     description: 'A user holding an NFC card tapping the device.',
     className: 'md:row-span-2',
-    url: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80',
+    url: `${baseUrl}images/galley-nfc.jpg`,
   },
   {
     title: 'Holographic fan mechanism',
     description: 'A detailed shot of the spinning holographic fan mechanism.',
     className: '',
-    url: 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=80',
+    url: `${baseUrl}images/galley-hero.jpg`,
   },
   {
     title: 'Miku style character dancing',
     description: "The device displaying a 'Miku' style character dancing.",
     className: '',
-    url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
+    url: `${baseUrl}images/galley-char.jpg`,
   },
 ];
 
@@ -34,13 +36,13 @@ const LifestyleShowcase: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-cyan-500/10 text-cyan-200 text-sm font-semibold border border-cyan-500/30">
-            桌搭美学
+            ������ѧ
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-5 font-display">
             Upgrade Your Desktop Aesthetics
           </h2>
           <p className="text-slate-300 text-lg max-w-3xl mx-auto mt-4">
-            以极简未来主义重塑桌面空间，暗色氛围与霓虹细节让灵境舱成为桌搭的视觉焦点。
+            �Լ���δ��������������ռ䣬��ɫ��Χ���޺�ϸ�����龳�ճ�Ϊ������Ӿ����㡣
           </p>
         </div>
 
