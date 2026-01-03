@@ -118,6 +118,22 @@
       .glass-shine {
         animation: glass-shine 5.5s ease-in-out infinite;
       }
+      @keyframes scanlines {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 12px; }
+      }
+      .scanline-overlay {
+        background-image: repeating-linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.02) 1px,
+          transparent 2px,
+          transparent 6px
+        );
+        animation: scanlines 1.6s linear infinite;
+        mix-blend-mode: screen;
+        opacity: 0.35;
+      }
     </style>
   <script type="importmap">
 {

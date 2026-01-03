@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
-import HoloDeviceDemo from './HoloDeviceDemo';
+import HoloVideoPlayer from './HoloVideoPlayer';
 
 const Hero: React.FC = () => {
   const scrollToPricing = () => {
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2 relative">
-            <HoloDeviceDemo />
+            <HoloVideoPlayer />
             <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 border border-white/10">
               <p className="text-xs text-slate-400">众筹目标</p>
               <p className="text-xl font-bold text-white">首批 1000 台</p>
