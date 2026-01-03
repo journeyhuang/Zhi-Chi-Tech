@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Menu, X, Disc } from 'lucide-react';
 import { SectionId } from '../types';
 
@@ -25,6 +25,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { id: SectionId.HOME, label: '首页' },
     { id: SectionId.FEATURES, label: '交互亮点' },
+    { id: SectionId.SHOWCASE, label: '桌搭美学' },
     { id: SectionId.SPECS, label: '硬核参数' },
     { id: SectionId.BUSINESS, label: '商业模式' },
     { id: SectionId.ROADMAP, label: '路线图' },
@@ -44,7 +45,6 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <button
@@ -63,7 +63,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-slate-100">
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -72,7 +71,6 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-black/90 absolute top-full left-0 w-full shadow-lg py-4 px-4 flex flex-col space-y-4 backdrop-blur-md">
           {navLinks.map((link) => (

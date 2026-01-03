@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ValueSection from './components/ValueSection';
+import LifestyleShowcase from './components/LifestyleShowcase';
 import ProductFeature from './components/ProductFeature';
 import DemoSection from './components/DemoSection';
 import FaqSection from './components/FaqSection';
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <ValueSection />
+        <LifestyleShowcase />
         <ProductFeature />
         <DemoSection />
         <FaqSection />

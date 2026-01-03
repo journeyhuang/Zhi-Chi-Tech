@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { SectionId } from '../types';
 import { Mail, Phone, MapPin, Disc } from 'lucide-react';
 
@@ -30,6 +30,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li><a href={`#${SectionId.HOME}`} className="hover:text-cyan-300 transition-colors">首页</a></li>
               <li><a href={`#${SectionId.FEATURES}`} className="hover:text-cyan-300 transition-colors">交互亮点</a></li>
+              <li><a href={`#${SectionId.SHOWCASE}`} className="hover:text-cyan-300 transition-colors">桌搭美学</a></li>
               <li><a href={`#${SectionId.SPECS}`} className="hover:text-cyan-300 transition-colors">硬核参数</a></li>
               <li><a href={`#${SectionId.BUSINESS}`} className="hover:text-cyan-300 transition-colors">商业模式</a></li>
               <li><a href={`#${SectionId.ROADMAP}`} className="hover:text-cyan-300 transition-colors">路线图</a></li>
