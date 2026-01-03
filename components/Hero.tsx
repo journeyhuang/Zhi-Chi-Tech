@@ -1,6 +1,7 @@
 ﻿import React from 'react';
-import { ChevronRight, Sparkles, Disc } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { SectionId } from '../types';
+import HoloDeviceDemo from './HoloDeviceDemo';
 
 const Hero: React.FC = () => {
   const scrollToPricing = () => {
@@ -55,48 +56,7 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2 relative">
-            <div className="relative glass-panel rounded-3xl overflow-hidden p-8 border border-white/10">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,243,255,0.25),_transparent_55%)] opacity-60"></div>
-              <div className="relative z-10">
-                <div className="flex items-center justify-between text-sm text-slate-300 mb-6">
-                  <span className="flex items-center gap-2">
-                    <Disc size={16} />
-                    Holo Core v1.0
-                  </span>
-                  <span className="text-cyan-300">旋转视觉演示</span>
-                </div>
-
-                <div className="relative h-72 md:h-80 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950/90 border border-white/10 overflow-hidden">
-                  <div className="absolute inset-x-0 top-8 flex items-center justify-center">
-                    <div className="relative w-44 h-44 md:w-52 md:h-52">
-                      <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-2xl animate-pulse-glow"></div>
-                      <div className="absolute inset-6 rounded-full border border-cyan-300/50 animate-spin-slow"></div>
-                      <div className="absolute inset-12 rounded-full border border-fuchsia-400/40 animate-spin-slow"></div>
-                      <div className="absolute inset-16 rounded-full bg-gradient-to-tr from-cyan-300/30 to-fuchsia-400/20 backdrop-blur-sm"></div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                    <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-400/40 rounded-full px-4 py-1 text-cyan-200 text-xs">
-                      <Sparkles size={14} />
-                      POV 旋转光场成像
-                    </div>
-                    <p className="text-slate-400 text-xs mt-3">铝合金底座 · 高透亚克力舱体</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-3 gap-3 text-xs text-slate-300">
-                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
-                    静音 BLDC 电机
-                  </div>
-                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
-                    144 灯/米
-                  </div>
-                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
-                    NFC 灵境卡
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HoloDeviceDemo />
             <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 border border-white/10">
               <p className="text-xs text-slate-400">众筹目标</p>
               <p className="text-xl font-bold text-white">首批 1000 台</p>
