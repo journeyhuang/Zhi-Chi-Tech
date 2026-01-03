@@ -22,11 +22,12 @@ const HoloVideoPlayer: React.FC = () => {
 
         <button
           type="button"
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/40 px-4 py-1 text-xs font-semibold text-white backdrop-blur hover:border-cyan-300/70 hover:text-cyan-100 transition-colors"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-semibold text-white backdrop-blur-md hover:border-cyan-300/70 hover:text-cyan-100 transition-colors"
         >
           360 View
         </button>
       </div>
+      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-8 w-56 rounded-full bg-black/60 blur-2xl shadow-[0_0_30px_rgba(0,243,255,0.25)]"></div>
     </div>
   );
 };
