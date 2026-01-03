@@ -1,32 +1,55 @@
 import React from 'react';
 import { SectionId } from '../types';
+import { imageAssets, type ImageAssetKey } from '../data/lifestyleImages';
 
 const baseUrl = import.meta.env.BASE_URL;
 
-const images = [
+const buildSrcSet = (baseName: string, sizes: readonly number[]) =>
+  sizes.map((size) => `${baseUrl}images/optimized/${baseName}-${size}.jpg ${size}w`).join(', ');
+
+type LifestyleImage = {
+  title: string;
+  description: string;
+  className: string;
+  assetKey: ImageAssetKey;
+  sizes: string;
+  loading: 'eager' | 'lazy';
+  fetchPriority?: 'high' | 'low' | 'auto';
+};
+
+const images: LifestyleImage[] = [
   {
     title: 'Spirit Cabin on RGB desk setup',
     description: 'A wide shot of the Spirit Cabin on a dimly lit desk with RGB ambient lighting.',
     className: 'md:col-span-2 md:row-span-2',
-    url: `${baseUrl}images/galley-hero.jpg`,
+    assetKey: 'hero',
+    sizes: '(min-width: 1024px) 66vw, (min-width: 768px) 66vw, 100vw',
+    loading: 'eager',
+    fetchPriority: 'high',
   },
   {
     title: 'NFC tap interaction',
     description: 'A user holding an NFC card tapping the device.',
     className: 'md:row-span-2',
-    url: `${baseUrl}images/galley-nfc.jpg`,
+    assetKey: 'nfc',
+    sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
+    loading: 'lazy',
   },
   {
     title: 'Holographic fan mechanism',
     description: 'A detailed shot of the spinning holographic fan mechanism.',
     className: '',
-    url: `${baseUrl}images/galley-hero.jpg`,
+    assetKey: 'hero',
+    sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
+    loading: 'lazy',
   },
   {
     title: 'Miku style character dancing',
     description: "The device displaying a 'Miku' style character dancing.",
     className: '',
-    url: `${baseUrl}images/galley-char.jpg`,
+    assetKey: 'char',
+    sizes: '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
+    loading: 'lazy',
   },
 ];
 
@@ -47,22 +70,32 @@ const LifestyleShowcase: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[180px] md:auto-rows-[200px] gap-4">
-          {images.map((image) => (
-            <div
-              key={image.title}
-              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 ${image.className} transition-shadow duration-500 hover:border-fuchsia-400/70 hover:shadow-[0_0_25px_rgba(255,79,216,0.6)]`}
-            >
-              <img
-                src={image.url}
-                alt={image.description}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-4 right-4 text-sm text-slate-200">
-                {image.description}
+          {images.map((image) => {
+            const asset = imageAssets[image.assetKey];
+            const srcSet = buildSrcSet(asset.baseName, asset.sizes);
+            return (
+              <div
+                key={image.title}
+                style={{ backgroundImage: `url(${asset.placeholder})` }}
+                className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 bg-cover bg-center ${image.className} transition-shadow duration-500 hover:border-fuchsia-400/70 hover:shadow-[0_0_25px_rgba(255,79,216,0.6)]`}
+              >
+                <img
+                  src={`${baseUrl}images/${asset.baseName}.jpg`}
+                  srcSet={srcSet}
+                  sizes={image.sizes}
+                  alt={image.description}
+                  loading={image.loading}
+                  fetchPriority={image.fetchPriority}
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-sm text-slate-200">
+                  {image.description}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
