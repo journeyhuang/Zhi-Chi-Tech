@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ValueSection from './components/ValueSection';
-import LifestyleShowcase from './components/LifestyleShowcase';
+import LifestyleGrid from './components/LifestyleGrid';
 import ProductFeature from './components/ProductFeature';
 import DemoSection from './components/DemoSection';
 import FaqSection from './components/FaqSection';
@@ -14,8 +14,8 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
+        <LifestyleGrid />
         <ValueSection />
-        <LifestyleShowcase />
         <ProductFeature />
         <DemoSection />
         <FaqSection />
