@@ -24,7 +24,10 @@ const Hero: React.FC = () => {
               年轻人的第一台桌面级全息数字手办
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">
-              灵境舱 Spirit Cabin
+              <span className="text-white">灵境舱</span>{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f3ff] to-[#ff007f]">
+                Spirit Cabin
+              </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-400">
                 打造年轻人的第一台桌面级全息数字手办
               </span>
@@ -53,14 +56,20 @@ const Hero: React.FC = () => {
                 查看版本价格
               </button>
             </div>
+            <div className="mt-6 max-w-sm mx-auto lg:mx-0">
+              <div className="flex items-center justify-between text-xs text-slate-300 mb-2">
+                <span>Early Bird Batch: 1000 Units</span>
+                <span className="text-slate-500">Limited Availability</span>
+              </div>
+              <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="h-full w-[60%] bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]"></div>
+              </div>
+            </div>
           </div>
           
           <div className="lg:w-1/2 relative">
+            <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-500/20 via-purple-500/10 to-transparent"></div>
             <HoloVideoPlayer />
-            <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 border border-white/10">
-              <p className="text-xs text-slate-400">众筹目标</p>
-              <p className="text-xl font-bold text-white">首批 1000 台</p>
-            </div>
           </div>
         </div>
       </div>
