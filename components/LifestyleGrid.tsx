@@ -24,7 +24,7 @@ const LifestyleGrid: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-4 left-4">
               <span className="text-sm font-bold text-white backdrop-blur bg-black/40 px-3 py-1 rounded-full">
-                Cyberpunk Desktop Upgrade
+                赛博桌搭升级
               </span>
             </div>
           </div>
@@ -38,7 +38,7 @@ const LifestyleGrid: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-4 left-4">
               <span className="text-sm font-bold text-white backdrop-blur bg-black/40 px-3 py-1 rounded-full">
-                NFC Soul Injection
+                NFC 灵魂注入
               </span>
             </div>
           </div>
@@ -52,7 +52,7 @@ const LifestyleGrid: React.FC = () => {
             <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
             <div className="absolute bottom-4 left-4">
               <span className="text-sm font-bold text-white backdrop-blur bg-black/40 px-3 py-1 rounded-full">
-                128px Holographic Detail
+                128 像素全息细节
               </span>
             </div>
           </div>
