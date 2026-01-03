@@ -6,10 +6,10 @@ export interface Message {
 
 export enum SectionId {
   HOME = 'home',
-  VALUE = 'value',
-  PRODUCT = 'product',
-  DEMO = 'demo',
+  FEATURES = 'features',
+  SPECS = 'specs',
+  BUSINESS = 'business',
+  ROADMAP = 'roadmap',
   ABOUT = 'about',
-  FAQ = 'faq',
   CONTACT = 'contact'
 }

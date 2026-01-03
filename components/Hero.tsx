@@ -1,87 +1,105 @@
-import React from 'react';
-import { ChevronRight, Heart } from 'lucide-react';
+﻿import React from 'react';
+import { ChevronRight, Sparkles, Disc } from 'lucide-react';
 import { SectionId } from '../types';
 
 const Hero: React.FC = () => {
-  const scrollToDemo = () => {
-    document.getElementById(SectionId.DEMO)?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToPricing = () => {
+    document.getElementById(SectionId.BUSINESS)?.scrollIntoView({ behavior: 'smooth' });
   };
-  const scrollToValue = () => {
-    document.getElementById(SectionId.VALUE)?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToFeatures = () => {
+    document.getElementById(SectionId.FEATURES)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id={SectionId.HOME} className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-orange-200/30 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-blue-200/30 rounded-full blur-3xl -z-10"></div>
+    <section id={SectionId.HOME} className="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <div className="absolute -top-32 left-1/2 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[120px]"></div>
+      <div className="absolute bottom-0 right-0 h-[380px] w-[380px] rounded-full bg-fuchsia-500/10 blur-[120px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 lg:pr-12 text-center lg:text-left">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-600 text-sm font-semibold mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-orange-500 mr-2"></span>
-              大学生创新创业项目
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="lg:w-1/2 text-center lg:text-left">
+            <div className="inline-flex items-center px-4 py-1 rounded-full bg-cyan-400/10 text-cyan-200 text-sm font-semibold mb-6 border border-cyan-400/30">
+              <span className="flex h-2 w-2 rounded-full bg-cyan-300 mr-2 animate-pulse-glow"></span>
+              年轻人的第一台桌面级全息数字手办
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6 font-display">
-              光影连接亲情 <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">
-                让陪伴近在咫尺
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 font-display">
+              灵境舱 Spirit Cabin
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-400">
+                打造年轻人的第一台桌面级全息数字手办
               </span>
             </h1>
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              “咫尺科技”致力于为独居老人打造智能情感陪伴终端，用裸眼3D与AI数字人复刻子女形象，
-              打破时空界限，让陪伴更真实、更温暖。
+            <p className="text-lg text-slate-300 mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              面向大学生核心走量市场、二次元/ACG 爱好者与硬件极客的桌面全息陪伴舱。以 POV 旋转显示、
+              NFC 刷卡换人与离线语音交互，让角色在宿舍桌面“动起来”。
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-slate-500 mb-8">
-              <span className="px-3 py-1 rounded-full bg-slate-100">3D 光场成像</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">情感计算引擎</span>
-              <span className="px-3 py-1 rounded-full bg-slate-100">家庭端同步</span>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 text-sm text-slate-300 mb-8">
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">宿舍桌面陪伴</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">NFC 刷卡解锁角色</span>
+              <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">节日 DLC 动作包</span>
             </div>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <button 
-                onClick={scrollToDemo}
-                className="flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg hover:bg-orange-600 transition-all hover:scale-105 shadow-xl"
+                onClick={scrollToFeatures}
+                className="flex items-center justify-center px-8 py-4 bg-cyan-400 text-slate-900 rounded-full font-bold text-lg hover:bg-cyan-300 transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(0,243,255,0.35)]"
               >
-                立即体验数字亲情
+                查看交互亮点
                 <ChevronRight className="ml-2" size={20} />
               </button>
               <button
-                onClick={scrollToValue}
-                className="flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 transition-all"
+                onClick={scrollToPricing}
+                className="flex items-center justify-center px-8 py-4 bg-white/5 text-slate-100 border border-white/10 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
               >
-                了解更多
+                查看版本价格
               </button>
             </div>
           </div>
           
-          <div className="lg:w-1/2 mt-16 lg:mt-0 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white animate-float">
-              <img 
-                src="https://picsum.photos/800/600?grayscale" 
-                alt="Elderly person smiling" 
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="bg-green-500 w-3 h-3 rounded-full animate-pulse"></div>
-                  <span className="text-white font-medium">系统在线 - 情感连接中</span>
+          <div className="lg:w-1/2 relative">
+            <div className="relative glass-panel rounded-3xl overflow-hidden p-8 border border-white/10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,243,255,0.25),_transparent_55%)] opacity-60"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between text-sm text-slate-300 mb-6">
+                  <span className="flex items-center gap-2">
+                    <Disc size={16} />
+                    Holo Core v1.0
+                  </span>
+                  <span className="text-cyan-300">旋转视觉演示</span>
                 </div>
-                <p className="text-white/90 text-sm">
-                  "虽然孩子在千里之外，但感觉他就在我身边。"
-                </p>
+
+                <div className="relative h-72 md:h-80 rounded-2xl bg-gradient-to-b from-slate-900/80 to-slate-950/90 border border-white/10 overflow-hidden">
+                  <div className="absolute inset-x-0 top-8 flex items-center justify-center">
+                    <div className="relative w-44 h-44 md:w-52 md:h-52">
+                      <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-2xl animate-pulse-glow"></div>
+                      <div className="absolute inset-6 rounded-full border border-cyan-300/50 animate-spin-slow"></div>
+                      <div className="absolute inset-12 rounded-full border border-fuchsia-400/40 animate-spin-slow"></div>
+                      <div className="absolute inset-16 rounded-full bg-gradient-to-tr from-cyan-300/30 to-fuchsia-400/20 backdrop-blur-sm"></div>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+                    <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-400/40 rounded-full px-4 py-1 text-cyan-200 text-xs">
+                      <Sparkles size={14} />
+                      POV 旋转光场成像
+                    </div>
+                    <p className="text-slate-400 text-xs mt-3">铝合金底座 · 高透亚克力舱体</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-3 text-xs text-slate-300">
+                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
+                    静音 BLDC 电机
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
+                    144 灯/米
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
+                    NFC 灵境卡
+                  </div>
+                </div>
               </div>
             </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3">
-              <div className="bg-red-100 p-2 rounded-full text-red-500">
-                <Heart size={24} fill="currentColor" />
-              </div>
-              <div>
-                <p className="text-xs text-slate-500">情感陪伴指数</p>
-                <p className="font-bold text-slate-800">98%</p>
-              </div>
+            <div className="absolute -bottom-6 -left-6 glass-panel rounded-2xl px-5 py-4 border border-white/10">
+              <p className="text-xs text-slate-400">众筹目标</p>
+              <p className="text-xl font-bold text-white">首批 1000 台</p>
             </div>
           </div>
         </div>

@@ -1,67 +1,64 @@
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React from 'react';
+import { Flag, Rocket, Link2, Trophy } from 'lucide-react';
 import { SectionId } from '../types';
 
-const faqs = [
+const roadmap = [
   {
-    question: '这是真实硬件还是网页演示？',
-    answer: '本页面为课程项目的产品展示与交互演示，呈现的是我们设想的终端体验与技术路径。',
+    title: '阶段 1｜摩点众筹预热',
+    description: '在摩点发布产品故事与核心技术，收集首批意向用户与反馈。',
+    icon: <Flag size={20} />,
   },
   {
-    question: '没有佩戴设备，老人也能看到 3D 影像吗？',
-    answer: '目标是实现裸眼3D显示，让老人无需额外设备即可看到立体影像，降低使用门槛。',
+    title: '阶段 2｜校园内测',
+    description: '在宿舍与社团场景试用，验证交互体验与稳定性。',
+    icon: <Rocket size={20} />,
   },
   {
-    question: '数字人会不会很“机械”？',
-    answer: '我们强调“情感计算 + 多轮对话”，让回应更有温度，同时避免生硬的问答。',
+    title: '阶段 3｜游戏 IP 联名',
+    description: '与热门游戏 IP 联名（如《崩坏：星穹铁道》），推出限定角色卡与动作包。',
+    icon: <Link2 size={20} />,
   },
   {
-    question: '隐私和安全如何保障？',
-    answer: '计划采用本地加密与家庭授权机制，确保素材与对话仅在家庭内部使用。',
-  },
-  {
-    question: '子女可以远程参与吗？',
-    answer: '支持子女端同步关键状态，必要时可远程介入或进行视频通话。',
+    title: '阶段 4｜量产发售',
+    description: '优化供应链与模具，启动稳定批量交付。',
+    icon: <Trophy size={20} />,
   },
 ];
 
 const FaqSection: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
-  const toggleFaq = (index: number) => {
-    setActiveIndex(prev => (prev === index ? null : index));
-  };
-
   return (
-    <section id={SectionId.FAQ} className="py-20 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={SectionId.ROADMAP} className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 font-display">常见问题</h2>
-          <p className="text-slate-600 mt-3">我们先替你回答最常被问到的 5 个问题。</p>
+          <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-fuchsia-500/10 text-fuchsia-200 text-sm font-semibold border border-fuchsia-500/30">
+            路线图
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-5 font-display">
+            众筹计划与 IP 联名节奏
+          </h2>
+          <p className="text-slate-300 mt-4 max-w-3xl mx-auto">
+            用阶段式节奏推进产品落地，先验证体验，再通过联名与量产放大影响力。
+          </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = index === activeIndex;
-            return (
-              <div key={index} className="border border-slate-200 rounded-2xl overflow-hidden">
-                <button
-                  type="button"
-                  className="w-full flex items-center justify-between p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors"
-                  onClick={() => toggleFaq(index)}
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-slate-900 font-semibold">{faq.question}</span>
-                  <ChevronDown className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isOpen && (
-                  <div className="p-5 bg-white text-slate-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {roadmap.map((item) => (
+            <div key={item.title} className="glass-panel rounded-2xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-4 text-cyan-200">
+                <span className="w-10 h-10 rounded-xl bg-cyan-400/10 flex items-center justify-center">
+                  {item.icon}
+                </span>
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
               </div>
-            );
-          })}
+              <p className="text-slate-300 text-sm leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 glass-panel rounded-3xl p-8 border border-white/10 text-center">
+          <p className="text-slate-300">
+            联名方向覆盖 ACG、校园社团与城市文化 IP，打造可收藏、可分享的桌面级全息内容生态。
+          </p>
         </div>
       </div>
     </section>

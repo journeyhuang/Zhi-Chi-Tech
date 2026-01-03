@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, HeartPulse } from 'lucide-react';
+import { Menu, X, Disc } from 'lucide-react';
 import { SectionId } from '../types';
 
 const Navbar: React.FC = () => {
@@ -24,23 +24,23 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { id: SectionId.HOME, label: '首页' },
-    { id: SectionId.VALUE, label: '方案亮点' },
-    { id: SectionId.PRODUCT, label: '核心科技' },
-    { id: SectionId.DEMO, label: '在线体验' },
-    { id: SectionId.ABOUT, label: '关于我们' },
+    { id: SectionId.FEATURES, label: '交互亮点' },
+    { id: SectionId.SPECS, label: '硬核参数' },
+    { id: SectionId.BUSINESS, label: '商业模式' },
+    { id: SectionId.ROADMAP, label: '路线图' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/70 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center cursor-pointer" onClick={() => scrollToSection(SectionId.HOME)}>
-            <div className="bg-gradient-to-r from-orange-400 to-red-500 p-2 rounded-lg text-white mr-3">
-              <HeartPulse size={24} />
+            <div className="bg-gradient-to-r from-cyan-400/90 to-fuchsia-500/90 p-2 rounded-lg text-white mr-3 shadow-[0_0_20px_rgba(0,243,255,0.4)]">
+              <Disc size={24} />
             </div>
             <div>
-              <span className={`text-xl font-bold ${isScrolled ? 'text-slate-800' : 'text-slate-900'} block leading-none`}>咫尺科技</span>
-              <span className={`text-xs ${isScrolled ? 'text-slate-500' : 'text-slate-600'} font-medium`}>ZhiChi Tech</span>
+              <span className={`text-xl font-bold ${isScrolled ? 'text-white' : 'text-slate-100'} block leading-none`}>灵境舱</span>
+              <span className={`text-xs ${isScrolled ? 'text-slate-300' : 'text-slate-400'} font-medium tracking-[0.2em]`}>SPIRIT CABIN</span>
             </div>
           </div>
 
@@ -50,22 +50,22 @@ const Navbar: React.FC = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`font-medium hover:text-orange-500 transition-colors ${isScrolled ? 'text-slate-700' : 'text-slate-800'}`}
+                className={`font-medium hover:text-cyan-300 transition-colors ${isScrolled ? 'text-slate-200' : 'text-slate-100'}`}
               >
                 {link.label}
               </button>
             ))}
           <button 
-            onClick={() => scrollToSection(SectionId.CONTACT)}
-            className="bg-slate-900 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-600 transition-colors shadow-lg"
+            onClick={() => scrollToSection(SectionId.BUSINESS)}
+            className="bg-cyan-400/90 text-slate-900 px-5 py-2 rounded-full font-semibold hover:bg-cyan-300 transition-colors shadow-[0_0_20px_rgba(0,243,255,0.35)]"
           >
-            预约体验
+            查看版本价格
           </button>
         </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-slate-800">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-slate-100">
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -74,21 +74,21 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-lg py-4 px-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-black/90 absolute top-full left-0 w-full shadow-lg py-4 px-4 flex flex-col space-y-4 backdrop-blur-md">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="text-left text-slate-700 font-medium py-2 border-b border-slate-100"
+              className="text-left text-slate-100 font-medium py-2 border-b border-white/10"
             >
               {link.label}
             </button>
           ))}
           <button 
-            onClick={() => scrollToSection(SectionId.CONTACT)}
-            className="bg-orange-500 text-white py-3 rounded-lg font-bold text-center w-full"
+            onClick={() => scrollToSection(SectionId.BUSINESS)}
+            className="bg-cyan-400 text-slate-900 py-3 rounded-lg font-bold text-center w-full"
           >
-            预约体验
+            查看版本价格
           </button>
         </div>
       )}

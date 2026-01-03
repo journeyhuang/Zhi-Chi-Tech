@@ -1,6 +1,6 @@
 {
-  "name": "ZhiChi Tech - Smart Companion",
-  "description": "Official website for ZhiChi Technology, featuring the Light & Shadow Affection Smart Emotional Companion Terminal.",
+  "name": "Spirit Cabin - Desktop Holographic Figure",
+  "description": "Landing page for Spirit Cabin (灵境舱), a desktop holographic digital figure device with NFC character interaction.",
   "requestFramePermissions": [
     "microphone"
   ]

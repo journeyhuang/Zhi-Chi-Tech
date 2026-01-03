@@ -3,31 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>咫尺科技 | 光影亲情-智能情感陪伴终端</title>
+    <title>灵境舱 Spirit Cabin | 桌面级全息数字手办</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Oxanium:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
         --font-body: 'Noto Sans SC', sans-serif;
-        --font-display: 'ZCOOL XiaoWei', serif;
-        --brand: #f97316;
-        --ink: #0f172a;
+        --font-display: 'Oxanium', 'Noto Sans SC', sans-serif;
+        --brand: #00f3ff;
+        --accent: #ff4fd8;
+        --metal: #c9d4e4;
+        --ink: #0b0d12;
+        --ink-soft: #121520;
       }
       body {
         font-family: var(--font-body);
         scroll-behavior: smooth;
-        background: radial-gradient(circle at top, rgba(251, 146, 60, 0.08), transparent 60%),
-                    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 55%),
-                    #f8fafc;
+        background: radial-gradient(1200px circle at 10% 10%, rgba(0, 243, 255, 0.12), transparent 55%),
+                    radial-gradient(900px circle at 90% 20%, rgba(255, 79, 216, 0.1), transparent 55%),
+                    linear-gradient(180deg, #0b0d12 0%, #0f1117 45%, #090b10 100%);
         position: relative;
+        color: #e2e8f0;
       }
       body::before {
         content: "";
         position: fixed;
         inset: 0;
-        background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
-        background-size: 120px 120px;
-        opacity: 0.35;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+        opacity: 0.25;
         pointer-events: none;
         z-index: 0;
       }
@@ -38,6 +44,15 @@
       .font-display {
         font-family: var(--font-display);
       }
+      .glass-panel {
+        background: rgba(15, 18, 26, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+      .neon-border {
+        box-shadow: 0 0 30px rgba(0, 243, 255, 0.25), inset 0 0 20px rgba(0, 243, 255, 0.12);
+        border: 1px solid rgba(0, 243, 255, 0.4);
+      }
       /* Custom scrollbar for chat */
       .scrollbar-hide::-webkit-scrollbar {
           display: none;
@@ -47,8 +62,8 @@
           scrollbar-width: none;
       }
       .hologram-effect {
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.2);
-        border: 1px solid rgba(56, 189, 248, 0.3);
+        box-shadow: 0 0 30px rgba(0, 243, 255, 0.5), inset 0 0 25px rgba(0, 243, 255, 0.2);
+        border: 1px solid rgba(0, 243, 255, 0.4);
       }
       @keyframes float {
         0% { transform: translateY(0px); }
@@ -57,6 +72,20 @@
       }
       .animate-float {
         animation: float 6s ease-in-out infinite;
+      }
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 18s linear infinite;
+      }
+      @keyframes pulse-glow {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 0.7; }
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 5s ease-in-out infinite;
       }
     </style>
   <script type="importmap">
@@ -71,7 +100,7 @@
 }
 </script>
 </head>
-  <body class="text-slate-900 antialiased">
+  <body class="text-slate-100 antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
