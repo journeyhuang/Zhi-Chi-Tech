@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import ValueSection from './components/ValueSection';
 import LifestyleGrid from './components/LifestyleGrid';
 import ProductFeature from './components/ProductFeature';
+import InteractionDemo from './components/InteractionDemo';
 import DemoSection from './components/DemoSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <LifestyleGrid />
         <ValueSection />
         <ProductFeature />
+        <InteractionDemo />
         <DemoSection />
         <FaqSection />
       </main>
